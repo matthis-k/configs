@@ -1,0 +1,104 @@
+{
+    "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    // "height": 30, // Waybar height (to be removed for auto height)
+    "margin": "2 2 2 2",
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["wlr/workspaces", "sway/mode"],
+    "modules-center": ["clock"],
+    "modules-right": ["custom/pacman", "pulseaudio", "backlight", "battery", "tray", "custom/notification"],
+
+
+    //***************************
+    //*  Modules configuration  *
+    //***************************
+
+    "wlr/workspaces": {
+        "format": "{icon}",
+    },
+
+    "custom/pacman": {
+        "format": "{} ",
+        "interval": 3600,
+        "exec": "(checkupdates; pacman -Qm | aur vercmp) | wc -l",
+        "exec-if": "exit 0",
+        "on-click": "$HOME/.config/waybar/scripts/update.sh",
+        "signal": 8,
+        "tooltip": false,
+    },
+
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+
+    "clock": {
+        // "timezone": "Europe/Berlin",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%a, %d %b, %I:%M %p}"
+    },
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span foreground='orange'><sup></sup></span>",
+            "none": "<span><sup> </sup></span>",
+            "dnd-notification": "<span foreground='orange'><sup></sup></span>",
+            "dnd-none": "<span><sup> </sup></span>",
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "reverse-scrolling": 1,
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "婢 {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["奄", "奔", "墳"]
+        },
+        "on-click": "pavucontrol",
+        "min-length": 13,
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["","","","", "", "", ""],
+        "min-length": 7,
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", "", ""],
+        "on-update": "$HOME/.config/waybar/scripts/check_battery.sh",
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 0
+    },
+}
