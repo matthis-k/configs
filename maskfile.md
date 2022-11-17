@@ -132,3 +132,20 @@ else
     done
 fi
 ~~~
+
+### clean
+
+> Cleans up everything except the metadata
+
+~~~bash
+rm -rf $MASKFILE_DIR/{home, root}
+~~~
+
+### get
+
+> Automatically get the configuration files from the metadata
+
+~~~bash
+$MASK conf clean
+$MASK conf add -f
+~~~
