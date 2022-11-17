@@ -108,7 +108,10 @@ ROOT_CONF_DIR=${root_path:-$MASKFILE_DIR/root}
 ~~~bash
 if [[ ! $file == "true" ]]; then
     [[ -z $path ]] && echo "You need to specify a path using -p or --path" && exit 1
-    [[ -f $path ]] && echo "Could not find file: $path" && exit 1
+    if [[ -f "$path" ]] && [[ -d "$path" ]]; then
+        echo "Could not find file: $path"
+        exit 1
+    fi
     abs_path=$(realpath $path)
     target=${abs_path#$HOME}
     target_dir=$(dirname $target)
