@@ -138,7 +138,8 @@ fi
 > Cleans up everything except the metadata
 
 ~~~bash
-rm -rf $MASKFILE_DIR/{home, root}
+rm -rf $MASKFILE_DIR/home
+rm -rf $MASKFILE_DIR/root
 ~~~
 
 ### get
