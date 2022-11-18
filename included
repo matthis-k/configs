@@ -1,0 +1,16 @@
+$HOME/.config/foot
+$HOME/.config/hypr
+$HOME/.config/rofi
+$HOME/.config/swaync
+$HOME/.config/swayidle
+$HOME/.config/swaylock
+$HOME/.config/waybar
+$HOME/.config/wlogout
+
+/usr/share/backgrounds/catppuccin-hyprland
+/usr/share/themes/Catppuccin-Mocha
+/usr/share/sddm/themes/catppuccin-custom
+/usr/share/grub/themes/catppuccin-mocha
+/etc/sddm.conf
+/etc/default/grub
+
