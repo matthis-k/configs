@@ -87,8 +87,8 @@ ROOT_CONF_DIR=${root_path:-$MASKFILE_DIR/root}
 [ ! -d $HOME_CONF_DIR ] && echo "Could not find directory (home): $HOME_CONF_DIR" && exit 0
 [ ! -d $ROOT_CONF_DIR ] && echo "Could not find directory (root): $ROOT_CONF_DIR" && exit 0
 
-[[ -n $(ls -a $HOME_CONF_DIR) ]] && cp -r $HOME_CONF_DIR $HOME
-[[ -n $(ls -a $ROOT_CONF_DIR) ]] && sudo cp -r $ROOT_CONF_DIR /
+[[ -n $(ls -a $HOME_CONF_DIR) ]] && cp -r $HOME_CONF_DIR/* $HOME
+[[ -n $(ls -a $ROOT_CONF_DIR) ]] && sudo cp -r $ROOT_CONF_DIR/* /
 ~~~
 
 ### add
