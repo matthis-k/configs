@@ -8,6 +8,7 @@ $HOME/.config/waybar
 $HOME/.config/wlogout
 
 /usr/share/backgrounds/catppuccin-hyprland
+/usr/bin/wrapped_hl
 /usr/share/themes/Catppuccin-Mocha
 /usr/share/sddm/themes/catppuccin-custom
 /usr/share/grub/themes/catppuccin-mocha
