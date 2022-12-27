@@ -6,7 +6,7 @@
 
 ### install paru
 
-> Install the paru (aur) package manager
+> Install [paru](https://github.com/morganamilo/paru)
 
 ~~~bash
 if [[ -z $(pacman -Q paru) ]]; then
@@ -36,7 +36,7 @@ fi
 **OPTIONS**
 * required_only
     * flags: --required
-    * desc: Only install the packages in `$MASKFILE_DIR/packages/required` 
+    * desc: Install the packages in `$MASKFILE_DIR/packages/required` 
 * confirm
     * flags: -m --manual-confirm
     * desc: Needed in case of conflicts
