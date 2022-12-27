@@ -1,0 +1,12 @@
+{
+    "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
+    "Lua.diagnostics.globals": [
+        "vim",
+        "lfs"
+    ],
+    "Lua.workspace.library": [
+        "/usr/share/nvim/runtime/lua",
+        "/home/matthisk/.config/nvim/lua",
+        "${3rd}/lfs/library"
+    ]
+}
