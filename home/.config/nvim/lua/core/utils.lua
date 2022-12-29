@@ -54,15 +54,15 @@ end
 function utils.edit_config()
     local path = vim.fn.stdpath("config")
     vim.cmd("cd " .. path)
-    vim.cmd("cd " .. path .. "/init.lua")
+    vim.cmd("edit " .. path .. "/init.lua")
 end
 
-utils.lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
+utils.lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = "tab" })
 function utils.toggle_lazygit()
     utils.lazygit:toggle()
 end
 
-utils.btm = Terminal:new({ cmd = "btm", hidden = true })
+utils.btm = Terminal:new({ cmd = "btm", hidden = true, direction = "tab" })
 function utils.toggle_btm()
     utils.btm:toggle()
 end
