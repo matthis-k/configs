@@ -1,5 +1,5 @@
 local function config()
-    local keymaps = require("core.keymaps")
+    local keymaps = require("core.keymaps").whichkey
     local wk = require("which-key")
     wk.setup({
         plugins = {
