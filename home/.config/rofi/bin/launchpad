@@ -4,10 +4,16 @@ rofi \
 	-show drun \
 	-modi run,drun,ssh \
 	-scroll-method 0 \
-	-drun-match-fields all \
+    -cycle false \
+	-drun-match-fields name \
 	-drun-display-format "{name}" \
 	-no-drun-show-actions \
-	-terminal kitty \
+	-terminal foot \
+    -disable-history \
+    -sorting-method levenshtein \
+    -matching fuzzy \
+    -hover-select \
+    -click-to-exit \
     -show-icons \
 	-kb-cancel Escape \
 	-theme "$HOME"/.config/rofi/config/launchpad.rasi

@@ -60,10 +60,15 @@ entry {
 }
 
 listview {
+  cycle: false;
+  flow: horizontal;
+  dynamic: true;
   margin:   48px calc( 50% - 560px );
   spacing:  48px;
   columns:  6;
   fixed-columns: true;
+  fixed-rows: true;
+  orientation:    vertical;
 }
 
 element, element-text, element-icon {
