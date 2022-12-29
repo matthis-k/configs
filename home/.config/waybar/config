@@ -5,7 +5,7 @@
     "margin": "2 2 2 2",
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["wlr/workspaces", "sway/mode"],
+    "modules-left": ["wlr/workspaces", "idle_inhibitor", "sway/mode"],
     "modules-center": ["clock"],
     "modules-right": ["custom/pacman", "pulseaudio", "backlight", "battery", "tray", "custom/notification"],
 
@@ -16,6 +16,17 @@
 
     "wlr/workspaces": {
         "format": "{icon}",
+        "on-click": "activate"
+    },
+
+    "idle_inhibitor": {
+        "on_click": "./scripts/toggle_idle.sh",
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+        "timeout": 30.5
     },
 
     "custom/pacman": {
@@ -82,9 +93,12 @@
         "format": "{percent}% {icon}",
         "format-icons": ["","","","", "", "", ""],
         "min-length": 7,
+        "on-scroll-up": "brightnessctl -c backlight set +1%",
+        "on-scroll-down": "brightnessctl -c backlight set 1%-",
     },
 
     "battery": {
+        "bat": "BAT0",
         "states": {
             "warning": 30,
             "critical": 15

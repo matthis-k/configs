@@ -19,20 +19,24 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
-#workspaces, #custom-pacman, #mode, #clock, #pulseaudio, #backlight, #battery, #tray, #custom-notification {
+#workspaces, #idle_inhibitor, #mode, #clock, #custom-pacman, #pulseaudio, #backlight, #battery, #tray, #custom-notification {
     color: @theme_text_color;
     background: @theme_bg_color;
     border-radius: 10px;
     font-size: 18px;
 }
 
-#workspaces, #mode {
+#workspaces, #idle_inhibitor, #mode {
     margin-top: 2px;
     margin-right: 8px;
     margin-bottom: 2px;
     margin-left: 0px;
     padding-right: 8px;
     padding-left: 8px;
+}
+
+#idle_inhibitor {
+    padding-right: 16px;
 }
 
 #clock {
