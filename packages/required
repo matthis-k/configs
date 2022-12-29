@@ -12,6 +12,7 @@ pamixer
 plasma-framework
 rofi-lbonn-wayland-git
 sddm
+plymouth
 swayidle
 swaylock-effects
 swaync

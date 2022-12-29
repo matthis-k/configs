@@ -12,6 +12,7 @@ $HOME/.config/wlogout
 /usr/share/themes/Catppuccin-Mocha-Standard-Blue-Dark
 /usr/share/sddm/themes/catppuccin-custom
 /usr/share/grub/themes/catppuccin-mocha
+/usr/share/plymouth/themes/catppuccin-mocha
 /etc/sddm.conf
 /etc/default/grub
-
+/etc/plymouth/plymouthd.conf
