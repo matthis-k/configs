@@ -7,9 +7,6 @@ local function config_mason()
     local null_ls = require("null-ls")
     null_ls.setup({
         sources = {
-            null_ls.builtins.completion.spell,
-            null_ls.builtins.diagnostics.eslint,
-            null_ls.builtins.diagnostics.write_good,
             null_ls.builtins.formatting.stylua,
             null_ls.builtins.formatting.mdformat,
         },
@@ -35,14 +32,34 @@ local function config()
         sign_icons = require("core.icons").diagnostics,
     })
     lsp.nvim_workspace()
-    lsp.setup()
     lsp.setup_nvim_cmp({
         sources = {
-            { name = "path" },
             { name = "nvim_lsp" },
+            { name = "path" },
             { name = "buffer" },
+            { name = "luasnip" },
+        },
+        completion = {
+            completeopt = "menu,menuone,noinsert,noselect",
+        },
+        preselect = "none",
+        formatting = {
+            fields = { "menu", "abbr", "kind" },
+            format = function(entry, item)
+                local menu_icon = {
+                    nvim_lsp = "λ",
+                    luasnip = "⋗",
+                    buffer = "Ω",
+                    path = "🖫",
+                    nvim_lua = "Π",
+                }
+
+                item.menu = menu_icon[entry.source.name]
+                return item
+            end,
         },
     })
+    lsp.setup()
 
     vim.diagnostic.config({
         virtual_text = true,
@@ -77,7 +94,6 @@ return {
 
             -- Snippets
             "L3MON4D3/LuaSnip",
-            "rafamadriz/friendly-snippets",
         },
         config = config,
     },
