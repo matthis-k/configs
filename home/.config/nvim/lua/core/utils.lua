@@ -1,3 +1,5 @@
+Terminal = require("toggleterm.terminal").Terminal
+
 local utils = {}
 
 function utils.edit_plugins()
@@ -53,6 +55,16 @@ function utils.edit_config()
     local path = vim.fn.stdpath("config")
     vim.cmd("cd " .. path)
     vim.cmd("cd " .. path .. "/init.lua")
+end
+
+utils.lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
+function utils.toggle_lazygit()
+    utils.lazygit:toggle()
+end
+
+utils.btm = Terminal:new({ cmd = "btm", hidden = true })
+function utils.toggle_btm()
+    utils.btm:toggle()
 end
 
 return utils
