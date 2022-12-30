@@ -13,6 +13,7 @@ $HOME/.config/wlogout
 /usr/share/sddm/themes/catppuccin-custom
 /usr/share/grub/themes/catppuccin-mocha
 /usr/share/plymouth/themes/catppuccin-mocha
+/usr/share/icons/Catppuccin-Blue-Cursors
 /etc/sddm.conf
 /etc/default/grub
 /etc/plymouth/plymouthd.conf
