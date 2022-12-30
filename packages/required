@@ -1,5 +1,4 @@
 brightnessctl
-catppuccin-cursors-git
 catppuccin-gtk-theme-mocha
 catppuccin-mocha-grub-theme-git
 firefox
@@ -7,7 +6,7 @@ foot
 grimblast
 hyprland-bin
 hyprpaper-git
-nerd-fonts-fira-code
+otf-nerd-fonts-fira-code
 pamixer
 plasma-framework
 rofi-lbonn-wayland-git
