@@ -1,4 +1,4 @@
-local icons = require("core.icons").diagnostics
+local icons = require("core.visuals.icons").diagnostics
 local function process_mappings(mappings)
     local list = {}
     for key, action in pairs(mappings) do

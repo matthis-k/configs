@@ -61,7 +61,7 @@ local function config()
                     "diagnostics",
                     sources = { "nvim_diagnostic" },
                     sections = { "error", "warn", "info", "hint" },
-                    symbols = require("core.icons").diagnostics,
+                    symbols = require("core.visuals.icons").diagnostics,
                     colored = true,
                     update_in_insert = true,
                     always_visible = false,

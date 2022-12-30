@@ -29,7 +29,7 @@ local function config()
     lsp.preset("recommended")
     lsp.ensure_installed({ "sumneko_lua", "rust_analyzer" })
     lsp.set_preferences({
-        sign_icons = require("core.icons").diagnostics,
+        sign_icons = require("core.visuals.icons").diagnostics,
     })
     lsp.nvim_workspace()
     lsp.setup_nvim_cmp({
@@ -38,6 +38,7 @@ local function config()
             { name = "path" },
             { name = "buffer" },
             { name = "luasnip" },
+            { name = "nerdfont" },
         },
         completion = {
             completeopt = "menu,menuone,noinsert,noselect",
@@ -91,6 +92,8 @@ return {
             "saadparwaiz1/cmp_luasnip",
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-nvim-lua",
+            "dmitmel/cmp-digraphs",
+            "chrisgrieser/cmp-nerdfont",
 
             -- Snippets
             "L3MON4D3/LuaSnip",

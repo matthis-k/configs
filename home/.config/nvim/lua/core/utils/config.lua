@@ -1,8 +1,6 @@
-Terminal = require("toggleterm.terminal").Terminal
+local M = {}
 
-local utils = {}
-
-function utils.edit_plugins()
+function M.edit_plugins()
     local io = require("io")
     local plugins_path = vim.fn.stdpath("config") .. "/lua/core/plugins/"
     local plugins = {}
@@ -18,7 +16,7 @@ function utils.edit_plugins()
     end)
 end
 
-function utils.new_plugin()
+function M.new_plugin()
     vim.ui.input({ prompt = "Enter new plugin: " }, function(input)
         if not input then
             return
@@ -51,20 +49,10 @@ function utils.new_plugin()
     end)
 end
 
-function utils.edit_config()
+function M.edit()
     local path = vim.fn.stdpath("config")
     vim.cmd("cd " .. path)
-    vim.cmd("edit " .. path .. "/init.lua")
+    vim.cmd("edit " .. path .. "/lua/core/init.lua")
 end
 
-utils.lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = "tab" })
-function utils.toggle_lazygit()
-    utils.lazygit:toggle()
-end
-
-utils.btm = Terminal:new({ cmd = "btm", hidden = true, direction = "tab" })
-function utils.toggle_btm()
-    utils.btm:toggle()
-end
-
-return utils
+return M

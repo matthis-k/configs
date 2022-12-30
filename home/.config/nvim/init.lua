@@ -1,9 +1,2 @@
-local modules = {
-    "core.editor",
-    "core.lazy",
-    "core.colorscheme",
-}
+require("core")
 
-for _, module in pairs(modules) do
-    require(module)
-end
