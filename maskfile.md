@@ -84,15 +84,16 @@ fi
 HOME_CONF_DIR=${home_path:-$MASKFILE_DIR/home}
 ROOT_CONF_DIR=${root_path:-$MASKFILE_DIR/root}
 
-[ ! -d $HOME_CONF_DIR ] && echo "Could not find directory (home): $HOME_CONF_DIR" && exit 0
-[ ! -d $ROOT_CONF_DIR ] && echo "Could not find directory (root): $ROOT_CONF_DIR" && exit 0
-
-for dir in $(ls -a $HOME_CONF_DIR); do
-    cp -r $HOME_CONF_DIR/$dir $HOME 
-done
-for dir in $(ls -a $ROOT_CONF_DIR); do
-    sudo cp -r $ROOT_CONF_DIR/* /
-done
+if [ -d $HOME_CONF_DIR ]; then
+    for dir in $(ls -a $HOME_CONF_DIR); do
+        cp -r $HOME_CONF_DIR/$dir $HOME 
+    done
+fi
+if [ -d $ROOT_CONF_DIR ]; then
+    for dir in $(ls -a $ROOT_CONF_DIR); do
+        sudo cp -r $ROOT_CONF_DIR/$dir /
+    done
+fi
 ~~~
 
 ### add
