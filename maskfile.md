@@ -86,12 +86,16 @@ ROOT_CONF_DIR=${root_path:-$MASKFILE_DIR/root}
 
 if [ -d $HOME_CONF_DIR ]; then
     for dir in $(ls -a $HOME_CONF_DIR); do
-        cp -r $HOME_CONF_DIR/$dir $HOME 
+        if [[ ! "$dir" =~ "^.$|^..$" ]]; then
+            cp -r $HOME_CONF_DIR/$dir $HOME 
+        fi
     done
 fi
 if [ -d $ROOT_CONF_DIR ]; then
     for dir in $(ls -a $ROOT_CONF_DIR); do
-        sudo cp -r $ROOT_CONF_DIR/$dir /
+        if [[ ! "$dir" =~ "^.$|^..$" ]]; then
+            sudo cp -r $ROOT_CONF_DIR/$dir /
+        fi
     done
 fi
 ~~~
