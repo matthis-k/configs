@@ -9,6 +9,7 @@ $HOME/.config/wlogout
 
 /usr/share/backgrounds/catppuccin-hyprland
 /usr/bin/wrapped_hl
+/usr/share/wayland-sessions/hyprland.desktop
 /usr/share/themes/Catppuccin-Mocha-Standard-Blue-Dark
 /usr/share/sddm/themes/catppuccin-custom
 /usr/share/grub/themes/catppuccin-mocha
