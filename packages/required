@@ -1,4 +1,6 @@
 awesome-terminal-fonts
+bluez
+bluez-utils
 blueberry-wayland
 brightnessctl
 catppuccin-gtk-theme-mocha
@@ -11,8 +13,8 @@ hyprland-bin
 hyprpaper-git
 nautilus
 nerd-fonts-complete
-networkmanager
 network-manager-applet
+networkmanager
 os-prober
 pamixer
 pipewire
@@ -25,5 +27,6 @@ swayidle
 swaylock-effects
 swaync
 waybar-hyprland-git
+wl-clipboard
 wlogout
 xdg-desktop-portal-wlr
